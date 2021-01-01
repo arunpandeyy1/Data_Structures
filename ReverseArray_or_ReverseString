@@ -1,0 +1,23 @@
+class Reverse
+{
+    public static  char[] swapChar(char str[],int i,int j)
+    {
+        char temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+        return str;
+    }
+    public static String reverseWord(String str)
+    {
+        char Str[] = str.toCharArray();
+        int low = 0, high = str.length()-1;
+        while(low<high)
+        {
+            swapChar(Str,low,high);
+            low++;
+            high--;
+        }
+        StringBuilder sb = new StringBuilder();
+        return sb.append(Str).toString(); 
+    }
+}
